@@ -1,0 +1,72 @@
+@font-face {
+    font-family: charlemagne;
+    src: url(../fonts/charlemagne.ttf);
+}
+
+@font-face {
+    font-family: scriptin;
+    src: url(../fonts/scriptin.ttf);
+}
+
+
+.slogan h2 {
+  font-family: charlemagne !important;
+  font-size: 3em !important;
+  line-height: 1.5em;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.slogan h2 .small {
+  font-size: .5em !important;
+}
+
+.slogan p {
+  font-family: scriptin;
+  font-size: 3em;
+  margin: 0 !important;
+  text-align: center;
+  line-height: 1em;
+  padding-bottom: 20px;
+}
+
+.image {
+    height: 20em !important;
+    width: 20em !important;
+}
+.image img {
+    height: 100%;
+}
+
+.spotlight.style3 .content {
+    border-color: inherit;
+}
+
+.contact .row {
+    margin-bottom: 25px;
+}
+
+.testimonial-name {
+    font-style: italic;
+}
+
+.form-divider:after {
+    background: #e44c65;
+    content: "";
+    display: block;
+    height: 0.2em;
+    max-width: 20em;
+    width: 75%;
+    margin: 25px auto;
+}
+
+input.read-only,
+input.read-only:hover,
+input.read-only:active,
+input.read-only:focus {
+    transition: none;
+    border: none;
+    background: none;
+    outline: none;
+    pointer-events: none;
+}
