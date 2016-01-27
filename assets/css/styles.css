@@ -75,6 +75,10 @@ input.read-only:focus {
     font-weight: bold;
 }
 
+section.tile {
+    height: 350px;
+}
+
 [dir='ltr'], [dir='rtl'] { 
 	unicode-bidi: -webkit-isolate;
 	unicode-bidi: -moz-isolate;
