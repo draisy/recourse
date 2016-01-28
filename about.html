@@ -151,16 +151,23 @@
                 <header>
                     <h2>Contact Us</h2>
                     <p>Send us a message below, and we'll get back to you as soon as possible.</p>
+                    <p id="successResponse"></p>
                 </header>
-                <form method="post" action="#" class="container 50%">
-                    <div class="row">
-                        <div class="8u 12u$(xsmall)">
+                <form id="contactForm" method="post" action="send-form.php" class="container 50%">
+                    <div class="row uniform">
+                        <div class="6u 12u$(xsmall)">
                             <input type="email" name="email" id="email" placeholder="Your Email Address" />
                         </div>
+                        <div class="6u 12u$(xsmall)">
+                            <input type="text" name="name" id="name" placeholder="Your Full Name" />
+                        </div>
                     </div>
-                    <div class="row">
+                    <div class="row uniform loader-wrapper">
                         <div class="12u">
                             <textarea name="message" placeholder="Message" id="contact_message" rows="6"></textarea>
+                        </div>
+                        <div id="loader">
+                            <img id="spinner" src="images/spinner.gif">
                         </div>
                     </div>
                     <div class="row">
@@ -188,6 +195,7 @@
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/util.js"></script>
+    <script src="assets/js/ajax.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
 

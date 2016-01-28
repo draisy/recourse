@@ -23,26 +23,8 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <!--<li>
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="elements.html">Elements</a></li> -->
-                     <li><a href="about.html">About Us</a></li>
-                     <li><a href="#contactus">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contactus">Contact</a></li>
                     <li><a href="coming-soon.html" class="button special">Sign Up</a></li>
                 </ul>
             </nav>
@@ -87,8 +69,8 @@
                         <div class="4u$ 12u$(medium)">
                             <p>The course is designed to give the heimishe tzibbur a very informative education about investing
                                 in real estate. It is a wealth of information and accumulated knowledge that is condensed
-                                into a very manageable number of classes. Specifically geared to the heimish mindset, the presentations are
-                                unique and easy to understand.</p>
+                                into a very manageable number of classes. Specifically geared to the heimish mindset, the
+                                presentations are unique and easy to understand.</p>
                         </div>
                     </div>
                 </div>
@@ -96,31 +78,13 @@
             <a href="#three" class="goto-next scrolly">Next</a>
         </section>
 
-
-        <!-- Two -->
-        <!--
-				<section id="two" class="spotlight style2 left">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Interdum amet non magna accumsan</h2>
-							<p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
-						</header>
-						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
--->
         <!-- Three -->
         <section id="three" class="spotlight style3 right">
             <span class="image fit main bottom"><img src="images/houseinhand.jpg" alt="" /></span>
             <div class="content">
                 <header>
                     <h2 dir="rtl">לערנט אייך די כללים פון <span class="bold" dir="rtl">ריעל עסטעיט</span></h2>
-                    <p dir="rtl">און אן אכט וואכען קורס מיט די גרעסטע עקספערטן, וואס וועלן אייך אויסלערנען די כללים ווי אזוי צי אנאלאזירין
+                    <p dir="rtl">און א זעקס וואכען קורס מיט די גרעסטע עקספערטן, וואס וועלן אייך אויסלערנען די כללים ווי אזוי צי אנאלאזירין
                         א דיעל און באשליסן איר ריכטיגע ווערד.</p>
                 </header>
                 <p dir="rtl">די קורסעס ווערן געגעבן געווארן אין אידיש.</p>
@@ -136,7 +100,7 @@
             <div class="container">
                 <header class="major">
                     <h2>This course will provide a professional curriculum.</h2>
-                    <p>Over a period of eight weeks, we will examine the following topics in depth.</p>
+                    <p>Over a period of six weeks, we will examine the following topics in depth.</p>
                 </header>
                 <div class="box alt">
                     <div class="row uniform">
@@ -205,16 +169,23 @@
                 <header>
                     <h2>Questions or Comments?</h2>
                     <p>Send us a message below, and we'll get back to you as soon as possible.</p>
+                    <p id="successResponse"></p>
                 </header>
-                <form method="post" action="#" class="container 50%">
-                    <div class="row">
-                        <div class="8u 12u$(xsmall)">
+                <form id="contactForm" method="post" action="send-form.php" class="container 50%">
+                    <div class="row uniform">
+                        <div class="6u 12u$(xsmall)">
                             <input type="email" name="email" id="email" placeholder="Your Email Address" />
                         </div>
+                        <div class="6u 12u$(xsmall)">
+                            <input type="text" name="name" id="name" placeholder="Your Full Name" />
+                        </div>
                     </div>
-                    <div class="row">
+                    <div class="row uniform loader-wrapper">
                         <div class="12u">
                             <textarea name="message" placeholder="Message" id="contact_message" rows="6"></textarea>
+                        </div>
+                        <div id="loader">
+                            <img id="spinner" src="images/spinner.gif">
                         </div>
                     </div>
                     <div class="row">
@@ -242,6 +213,7 @@
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/util.js"></script>
+    <script src="assets/js/ajax.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
 
