@@ -12,6 +12,9 @@
     <link rel="icon" href="./images/favicon.ico?" type="image/x-icon">
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="assets/js/flashcanvas.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -23,6 +26,8 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <!--  <li>
                         <a href="#">Layouts</a>
                         <ul>
@@ -55,9 +60,10 @@
                 </header>
 
                 <!-- Form -->
+                <p>* All fields are required.</p>
                 <section>
-                    <h3>Personal Information</h3>
-                    <form method="post" action="#">
+                    <h3>Personal Information*</h3>
+                    <form id="page1" method="post" action="send-initial.php">
                         <div class="row uniform 50%">
                             <div class="4u 12u$(medium)">
                                 <input type="text" name="fname" id="fname" value="" placeholder="First Name" />
@@ -141,14 +147,15 @@
                                 <input type="text" name="mphone" id="mphone" value="" placeholder="Cell Phone" />
                             </div>
                             <div class="4u 12u$(medium)">
-                                <input type="text" value="Do you have text messaging? Select one:" class="read-only" />
+                                <!--<input type="text" value="Do you have text messaging? Select one:" class="read-only" />-->
+                                <p style="height: 74px">Do you have text messaging? Select one:</p>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="radio" id="sms" name="sms" checked>
+                                <input type="radio" id="sms" name="sms" value="text" checked>
                                 <label for="sms">Yes</label>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="radio" id="nosms" name="sms">
+                                <input type="radio" id="nosms" value="no_text" name="sms">
                                 <label for="nosms">No</label>
                             </div>
                             <div class="6u 12u$(medium)">
@@ -156,11 +163,11 @@
                                 <!--   <input type="text" value="In case of change in class schedule, can we text or email you? Select one:" class="read-only" />-->
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="textchange" name="classchange" checked>
+                                <input type="radio" id="textchange" name="classchange" value="text_change" checked>
                                 <label for="textchange">Text</label>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="emailchange" name="classchange">
+                                <input type="radio" id="emailchange" name="classchange" value="email_change">
                                 <label for="emailchange">Email</label>
                             </div>
                             <div class="4u 12u$(medium)">
@@ -171,38 +178,38 @@
                                 <!--<input type="text" style="visibility: hidden"/>-->
                             </div>
 
-                            <div class="12u 12u$(xsmall)">
+                            <div class="10u 12u$(xsmall)">
                                 <p>This course will be in Yiddish. However certain materials will be in English and translated
                                     into Yiddish. Do you understand English? On a scale of 1-10 how well do you understand
                                     English?
                                 </p>
                             </div>
-                            <div class="1u 12u$(xsmall)">
+                            <div class="2u 12u$(xsmall)">
                                 <input type="text" name="level" id="level" value="" placeholder="1-10" />
                             </div>
                             <div class="11u 12u$(xsmall)">
-                                <input type="text" style="visibility:hidden" />
+                                <!--<input type="text" style="visibility:hidden" />-->
                             </div>
                             <div class="4u 12u$(xsmall)">
                                 <p>Can you read and understand English?</p>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="eng" name="eng" checked>
+                                <input type="radio" id="eng" name="eng" value="yes" checked>
                                 <label for="eng">Yes</label>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="noeng" name="eng">
+                                <input type="radio" id="noeng" name="eng" value="no">
                                 <label for="noeng">No</label>
                             </div>
                             <div class="4u 12u$(xsmall)">
                                 <p>Can you read and understand Yiddish?</p>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="yid" name="yid" checked>
+                                <input type="radio" id="yid" name="yid" value="yes" checked>
                                 <label for="yid">Yes</label>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="noyid" name="yid">
+                                <input type="radio" id="noyid" value="no" name="yid">
                                 <label for="noyid">No</label>
                             </div>
 
@@ -211,18 +218,18 @@
                                 <p>This course will be in Boro Park, on Sundays. Which time slot do you prefer? Select one:</p>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="radio" id="1time" name="time" checked>
+                                <input type="radio" id="1time" name="time" checked value="1:30">
                                 <label for="1time">1:30 - 4pm</label>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="radio" id="noyid" name="time">
-                                <label for="noyid">5 - 7:30pm</label>
+                                <input type="radio" id="2time" name="time" value="5:00">
+                                <label for="2time">5 - 7:30pm</label>
                             </div>
 
                             <div class="12u 12u$(medium) form-divider"></div>
 
                             <div class="12u">
-                                <h3>Business Information</h3>
+                                <h3>Business Information*</h3>
                             </div>
                             <div class="4u 12u$(medium)">
                                 <input type="text" name="business" id="business" value="" placeholder="Business Name" />
@@ -239,11 +246,11 @@
                                 <p>Are you currently employed in a real estate field? Select one:</p>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="reyes" name="re" checked>
+                                <input type="radio" id="reyes" name="re" checked value="yes">
                                 <label for="reyes">Yes</label>
                             </div>
                             <div class="1u 12u$(medium)">
-                                <input type="radio" id="reno" name="re">
+                                <input type="radio" id="reno" name="re" value="no">
                                 <label for="reno">No</label>
                             </div>
                             <div class="4u 12u$(xsmall)">
@@ -265,37 +272,37 @@
                             </div>
 
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="sign" name="sign">
+                                <input type="checkbox" value="sign" id="sign" name="referral">
                                 <label for="sign">Sign</label>
                             </div>
 
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="newspaper" name="newspaper">
+                                <input type="checkbox" id="newspaper" name="referral" value="newspaper">
                                 <label for="newspaper">Newspaper</label>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="luach" name="luach">
+                                <input type="checkbox" id="luach" name="referral" value="luach">
                                 <label for="luach">Luach Hatzibor</label>
                             </div>
 
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="kv" name="kv">
+                                <input type="checkbox" id="kv" name="referral" value="kol_mevaser">
                                 <label for="kv">Kol Mevaser</label>
                             </div>
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="friend" name="friend">
+                                <input type="checkbox" id="friend" name="referral" value="friend">
                                 <label for="friend">Friend</label>
                             </div>
 
                             <div class="2u 12u$(medium)">
-                                <input type="checkbox" id="other" name="other">
+                                <input type="checkbox" id="other" name="referral" value="other">
                                 <label for="other">Other</label>
                             </div>
 
                             <div class="12u 12u$(medium) form-divider"></div>
 
                             <div class="12u">
-                                <h3>Emergency Contact Information</h3>
+                                <h3>Emergency Contact Information*</h3>
                             </div>
 
                             <div class="6u 12u$(medium)">
@@ -312,20 +319,68 @@
                             </div>
 
                             <div class="12u 12u$(medium) form-divider"></div>
-                            <div class="12u">
-                                <h3>Terms and Agreeents</h3>
-                                <div class="12u 12u$(xsmall)">
-                                    <!--  <input type="text" class="read-only" value="Are you currently employed in a real estate field? Select one:"/> -->
-                                    <p>Tuition for the Real Estate Course is $1800. Tuition is to be paid as follows $1000 at
-                                        time of registration, in order to reserve a space in the course. $ 800 before the
-                                        first class. This fee is non-refundable. Curriculum adjustment will be left to NYREC
-                                        discretion. NYREC does NOT claim responsibility for finding employment for graduates
-                                        upon completion of this course; this course is designed to teach job seekers/entrepreneurs
-                                        the skills they need to succeed in today’s real estate field.</p>
+                            <div class="12u$ loader-wrapper">
+                                <div id="loader">
+                                    <img id="spinner" src="images/spinner.gif">
+                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <input type="submit" value="Continue Registration" class="special" />
+                                    </li>
+                                    <!--<li>
+                                        <input type="reset" value="Reset" />
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="page2" style="visibility:hidden">
+                        <div class="12u">
+                            <h3>Terms and Agreeents</h3>
+                            <div class="12u 12u$(xsmall)">
+                                <!--  <input type="text" class="read-only" value="Are you currently employed in a real estate field? Select one:"/> -->
+                                <p>Tuition for the Real Estate Course is $1800. Tuition is to be paid as follows $1000 at time
+                                    of registration, in order to reserve a space in the course. $ 800 before the first class.
+                                    This fee is non-refundable. Curriculum adjustment will be left to NYREC discretion. NYREC
+                                    does NOT claim responsibility for finding employment for graduates upon completion of
+                                    this course; this course is designed to teach job seekers/entrepreneurs the skills they
+                                    need to succeed in today’s real estate field.
+                                </p>
+                                <p> Please print and click or tap in the signature box to sign. Submit your form below to complete
+                                    registration.
+                                </p>
+                            </div>
+                        </div>
+
+                        <form id="signupForm" action="send-signup.php">
+                            <div class="row">
+                                <div class="6u 12u$(medium)">
+                                    <input type="text" id="fullName" placeholder="Please enter full name." />
+                                </div>
+                            </div>
+                            <div class="row uniform">
+                                <div class="6u 12u$(medium)">
+                                    <div id="signature" style="color:red; border:1px solid; border-radius:10px;"></div>
+                                    <img id="submitsig" style="display:none" />
+                                    <input type="hidden" id="signatureVal" name="signatureVal" value="" />
                                 </div>
                             </div>
 
-                            <!--
+                            <div class="row uniform loader-wrapper">
+                                <div id="loader2">
+                                    <img id="spinner" src="images/spinner.gif">
+                                </div>
+                                <div class="2u 12u$(xsmall" )>
+                                    <input type="button" value="Reset Signature" onclick="resetSig()" />
+                                </div>
+                                <div class="2u 12u$(xsmall" )>
+                                    <input type="submit" value="Submit Registration" class="special" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--
                             <div class="select-wrapper">
                                 <select name="category" id="category">
                                     <option value="">- Category -</option>
@@ -359,18 +414,6 @@
                         <div class="12u$">
                             <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
                         </div> -->
-                            <div class="12u$">
-                                <ul class="actions">
-                                    <li>
-                                        <input type="submit" value="Submit Registration" class="special" />
-                                    </li>
-                                    <li>
-                                        <input type="reset" value="Reset" />
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
                 </section>
 
                 <!-- Footer -->
@@ -389,8 +432,50 @@
             <script src="assets/js/jquery.scrollex.min.js"></script>
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
+            <script src="assets/js/ajax.js"></script>
             <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/jSignature.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+
+            <script>
+                $(window).load(function() {
+                    var phones = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}];
+                    $('#hphone').inputmask({ 
+                        mask: phones, 
+                        greedy: false, 
+                        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+                    $('#mphone').inputmask({ 
+                        mask: phones, 
+                        greedy: false, 
+                        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+                });
+                
+                $(document).ready(function() {
+                    $("#signature").jSignature();
+                    $('#loader').hide();
+                    $('#loader2').hide();
+                })
+                
+                function resetSig(){
+                    $("#signature").jSignature('reset');
+                }
+                $("#signature").on('click', function(e){
+                    $("#signatureVal").val("true");
+                });
+                
+                 $("#signature").on('tap', function(e){
+                    $("#signatureVal").val("true");
+                });
+                
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                    ga('create', 'UA-73104687-1', 'auto');
+                    ga('send', 'pageview');
+            </script>
 
 </body>
 
