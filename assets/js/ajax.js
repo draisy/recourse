@@ -22,7 +22,7 @@
 
         /* get some values from elements on the page: */
         var $form = $(this),
-            url = $form.attr('action');
+            url = 'send-form.php';
         /* Send the data using post */
         var data = { email: $('#email').val(), name: $('#name').val(),
                     message: $('#contact_message').val()},
@@ -48,7 +48,7 @@
         $('#loader2').show();
         
         var $form = $(this),
-            url = $form.attr('action'),
+            url = 'send-signup.php',
             image = $('#signature').jSignature('getData', 'svgbase64'),
             empty = false,
             postFinal,
@@ -134,7 +134,7 @@
         event.preventDefault();
         $('#loader').show();
         var $form = $(this),
-            url = $form.attr('action'),
+            url = 'send-initial.php',
             empty = false,
             posting, 
             data = {
@@ -230,7 +230,7 @@
 
         /* get some values from elements on the page: */
         var $form = $(this),
-            url = $form.attr('action');
+            url = 'send-hiring.php';
         /* Send the data using post */
         var data = {
             name: $('#name').val(),
@@ -260,6 +260,38 @@
                $('#successResponse').html('Thank you for contacting the NY Real Estate Course. We will reply to ' +
                     email + ' shortly. <br/><div class="small">(If this email is not correct, please resubmit with the correct information.)</div>');
                 $('#contactHiringForm')[0].reset();
+            });
+        }
+    });
+
+        $('#pricingForm').submit(function (event) {
+        /* stop form from submitting normally */
+        event.preventDefault();
+
+        /* get some values from elements on the page: */
+        var $form = $(this),
+            url = 'send-pricing-form.php';
+        /* Send the data using post */
+        var data = { 
+                email: $('#email').val(), 
+                fname: $('#fname').val(),
+                lname: $('#lname').val(),
+                message: $('#contact_message').val(),
+                phone: $('#phone').val()
+            },
+            email = $('#email').val(); // store for use in successresponse
+
+        if (data.fname == "" || data.lname == "" || data.email == "" || data.phone == "") {
+            alert("Please complete required fields and resubmit.");
+        } else if (!validateEmail(data.email)) {
+            alert("Please enter a valid email address.")
+        } else {
+            var posting = $.post(url, data);
+            /* Alerts the results */
+            posting.done(function (data) {
+               $('#successResponse').html('Thank you for your request. We will reply to ' +
+                    email + ' shortly. <br/><div class="small">(If this email is not correct, please resubmit with the correct information.)</div>');
+                $('#pricingForm')[0].reset();
             });
         }
     });

@@ -1,10 +1,16 @@
 <?php 
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = "Please send pricing information to: \r\n" .$fname ." ". $lname ."\r\n" 
+."Phone: " .$phone  ."\r\n" ."Email: " .$email ."\r\n"."Message: " .$_POST['message'];
+
 require 'PHPMailerAutoload.php';
 $mail = new PHPMailer();
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-$mail->isSMTP();                                      // Set mailer to use SMTP
-//$mail->Host       = "smtp.gmail.com";
+//$mail->SMTPDebug = 3; // Enable verbose debug output
+$mail->isSMTP();   // Set mailer to use SMTP
 $mail->Host = 'localhost';      
 $mail->SMTPDebug  = 0;
 $mail->SMTPAuth   = false;                 
@@ -19,17 +25,12 @@ $mail->Password = 'Nyrec1969';
  //$mail->Port = 25;                                    // TCP port to connect to
 
 
-$mail->addReplyTo($_POST['email'], $_POST['name']);
-$mail->setFrom('info@nyrecourse.com', $_POST['name']);
-$mail->isHTML(true);                                  // Set email format to HTML
-if (isset($_POST[subject])) {
-  $mail->Subject = $_POST['subject'];
-} else {
-  $mail->Subject = "NY Real Estate Course Inquiry From ".$_POST['name'];
-}
-$mail->Body    = $_POST['message'];
-$mail->AltBody = $_POST['message'];
-$mail->addAddress('nyrealestatecourse@gmail.com', 'NYRE Course');     // Add a recipient
+$mail->addReplyTo($email, $fname ." ". $lname);
+$mail->setFrom('info@nyrecourse.com', $fname ." ". $lname);
+$mail->isHTML(true);  
+$mail->Subject = "NY Real Estate Course Pricing Request From ".$fname ." ". $lname;
+$mail->Body = $message;
+$mail->addAddress('draisy@gmail.com', 'NYRE Course');     // Add a recipient
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
