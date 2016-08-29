@@ -36,7 +36,7 @@
  $information = array("First Name: " => $fname, "Last Name: " => $lname, "Email Address: " => $email, "Street Address: " => $address, "City: " => $city, 
                         "State: " => $state, "Zip Code: " => $zip, "Home Phone: " => $phone, "Cell Phone: " => $cell, "If classes change: " => $classChange, 
                         "Contact for change: " => $contactChange, "English Level: " => $level, "Read and understand English: " => $eng, 
-                        "Read and understand Yiddish? " => $yid, "Time preference: " => $time, "Business Name: " => $business, 
+                        "Read and understand Yiddish? " => $yid, "Course Location: " => $time, "Business Name: " => $business, 
                         "Occupation: " => $occupation, "Kollel: " => $kollel, "Currently in real estate? " => $re, "If so, how long? " => $length, 
                         "Emergency Contact Name: " => $ecname, "Emergency Contact Phone: " => $ecphone, 
                         "Emergency Contact Name 2: " => $ecname2, "Emergency Contact Phone 2: " => $ecphone2);

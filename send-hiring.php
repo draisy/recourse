@@ -52,7 +52,7 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = "NY Real Estate Hiring Submission From ".$_POST['name'];
 $mail->Body    = $messageBody;
 $mail->AltBody = $altBody;
-$mail->addAddress('draisy@gmail.com', 'NYRE Course');     // Add a recipient
+$mail->addAddress('nyrealestatecourse@gmail.com', 'NYRE Course');     // Add a recipient
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
