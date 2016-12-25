@@ -3466,6 +3466,21 @@
 
 /* XLarge */
 
+	@media screen and (min-width: 1680px) {
+
+		/* Basic */
+
+			body, input, select, textarea {
+				font-size: 13pt;
+			}
+			#one.highlight {
+				height: 200vh;
+			}
+
+
+	}
+/* XLarge */
+
 	@media screen and (max-width: 1680px) {
 
 		/* Basic */
@@ -3473,6 +3488,10 @@
 			body, input, select, textarea {
 				font-size: 13pt;
 			}
+			#one.highlight {
+				height: 200vh;
+			}
+
 
 	}
 
@@ -3523,6 +3542,9 @@
 
 			#footer {
 				padding: 4.5em 0;
+			}
+			#one.highlight {
+				height: 200vh;
 			}
 
 	}
@@ -3604,6 +3626,10 @@
 
 			#footer {
 				padding: 4.5em 0;
+			}
+
+			#one.highlight {
+				height: initial;
 			}
 
 	}

@@ -104,6 +104,16 @@ section.tile {
     font-size: .75em;
 }
 
+#successResponse.pricing {
+    background: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 2px solid #ff0000;
+    padding: 15px;
+    text-align: left;
+    display: none;
+
+}
 .hiringForm div {
     text-align: left;
 }
@@ -160,6 +170,14 @@ section.tile {
 
 header.major.upcoming::after {
     display: none;
+}
+
+.highlight-video {
+    text-align: center;
+}
+
+.highlight-video video {
+    /*margin-top: -90px;*/
 }
 
 

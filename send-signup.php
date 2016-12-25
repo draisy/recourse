@@ -76,6 +76,7 @@
  $ecname2 = $_POST['ecname2'];
  $ecphone2 = $_POST['ecphone2'];
  $referrals = $_POST['referrals'];
+ $signature = $_POST['signature'];
  
  $referralMethods = array();
  if(isset($referrals)) {
@@ -93,8 +94,8 @@ print_r($referralMethods);
                         "Read and understand Yiddish? " => $yid, "Time preference: " => $time, "Business Name: " => $business, 
                         "Occupation: " => $occupation, "Kollel: " => $kollel, "Currently in real estate? " => $re, "If so, how long? " => $length, 
                         "Emergency Contact Name: " => $ecname, "Emergency Contact Phone: " => $ecphone, 
-                        "Emergency Contact Name 2: " => $ecname2, "Emergency Contact Phone 2: " => $ecphone2);
- $messageBody = '<p>A new user has submitted the signatures for the registration. The following are the details:</p><ul>';
+                        "Emergency Contact Name 2: " => $ecname2, "Emergency Contact Phone 2: " => $ecphone2, "Signature: " => $signature);
+ $messageBody = '<p>A new user has submitted the the final confirmation for the registration. The following are the details:</p><ul>';
  $altBody = '';
  
 foreach($information as $x => $x_value) {
@@ -107,10 +108,10 @@ foreach($referrals as $referral) {
 }
 $messageBody = $messageBody.'</ul>';
 
-$imageData = $_POST['image'];
-$uri = substr($data,strpos($imageData,",")+1);
+// $imageData = $_POST['image'];
+// $uri = substr($data,strpos($imageData,",")+1);
 $date = date('Y-m-d H:i:s');
-file_put_contents('images/signatures/signedimage'.$date.'.svg', file_get_contents($imageData));
+// file_put_contents('images/signatures/signedimage'.$date.'.svg', file_get_contents($imageData));
 
 require 'PHPMailerAutoload.php';
 $mail = new PHPMailer();
@@ -138,7 +139,7 @@ $mail->setFrom('info@nyrecourse.com', $fname);
 $mail->isHTML(true);   
 $mail->Subject = "Final signup from " .$fname. " " .$lname; 
 //$mail->AddEmbeddedImage('images/signatures/signedimage'.$date.'.svg', 'my-attach');
-$mail->addAttachment('images/signatures/signedimage'.$date.'.svg', $fname.$lname.'signature.svg'); 
+// $mail->addAttachment('images/signatures/signedimage'.$date.'.svg', $fname.$lname.'signature.svg'); 
 $mail->Body    = $messageBody;
 $mail->AltBody = $altBody;
 $mail->addAddress('draisy@gmail.com', 'NYRE Course');     // Add a recipient

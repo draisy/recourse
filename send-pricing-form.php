@@ -3,7 +3,7 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$message = "Please send pricing information to: \r\n" .$fname ." ". $lname ."\r\n" 
+$message = "Pricing information has been sent to: \r\n Name: " .$fname ." ". $lname ."\r\n" 
 ."Phone: " .$phone  ."\r\n" ."Email: " .$email ."\r\n"."Message: " .$_POST['message'];
 
 require 'PHPMailerAutoload.php';
@@ -31,6 +31,7 @@ $mail->isHTML(true);
 $mail->Subject = "NY Real Estate Course Pricing Request From ".$fname ." ". $lname;
 $mail->Body = $message;
 $mail->addAddress('draisy@gmail.com', 'NYRE Course');     // Add a recipient
+$mail->addAddress('nyrealestatecourse@gmail.com', 'NYRE Course');     // Add a recipient
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';

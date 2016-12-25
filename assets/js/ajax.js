@@ -49,7 +49,7 @@
         
         var $form = $(this),
             url = 'send-signup.php',
-            image = $('#signature').jSignature('getData', 'svgbase64'),
+           // image = $('#signature').jSignature('getData', 'svgbase64'),
             empty = false,
             postFinal,
             data = {
@@ -79,13 +79,14 @@
                 ecname2: $('#ec2name').val(),
                 ecphone2: $('#ec2phone').val(),
                 referrals: [],
-                image: ''
+                signature: $('input[name=signature]:checked').val(),
+                //image: ''
                 },
         referrals = new Array();
         $("input[name=referral]:checked").each(function() {
             data['referrals'].push($(this).val());
         });
-        data['image'] = "data:" + image.join(",");
+        // data['image'] = "data:" + image.join(",");
         
         $form.find( 'input[type!="hidden"]' ).each(function () {
             if (!$(this).val()) { 
@@ -104,10 +105,6 @@
             alert('Please enter a valid email address and resubmit.');
             $('#loader2').hide();
             return;
-        } else if ($('#signatureVal').val() !== "true") {
-            alert('Please sign the signature pad with mouse click or finger tap on touchscreen.');
-            $('#loader2').hide();
-            return;
         } else {
             postFinal = $.post(url, data)
             postFinal.done(function (data) {
@@ -115,7 +112,6 @@
                 $('#loader2').hide();
                 $('#page1')[0].reset();
                 $('#signupForm')[0].reset();
-                $("#signature").jSignature('reset');
                 window.scrollTo(0, 0);
                 alert('Thank you. Your registration has been sent successfully. We will be in touch with you shortly.')
             });    
@@ -281,7 +277,7 @@
             },
             email = $('#email').val(); // store for use in successresponse
 
-        if (data.fname == "" || data.lname == "" || data.email == "" || data.phone == "") {
+        if (data.fname == "" || data.lname == "" || data.email == "" || data.phone == "" || data.message == "") {
             alert("Please complete required fields and resubmit.");
         } else if (!validateEmail(data.email)) {
             alert("Please enter a valid email address.")
@@ -289,8 +285,7 @@
             var posting = $.post(url, data);
             /* Alerts the results */
             posting.done(function (data) {
-               $('#successResponse').html('Thank you for your request. We will reply to ' +
-                    email + ' shortly. <br/><div class="small">(If this email is not correct, please resubmit with the correct information.)</div>');
+               $('#successResponse.pricing').show();
                 $('#pricingForm')[0].reset();
             });
         }

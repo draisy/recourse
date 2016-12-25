@@ -26,21 +26,25 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="faq.html#main">Upcoming Courses</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                        <li>
+                    <li><a href="faq.html#main">Upcoming</a></li>
+                    <li><a href="highlights.html">Videos</a></li>
+                    <li>
                         <a href="#">Resources</a>
                         <ul>
+                            <li><a href="pricing.html">Prices</a></li>
                             <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="faq.html#press">In the Press</a></li>
                             <li><a href="resources.html#resources">Helpful Links</a></li>
                             <li><a href="resources.html#hiring">Looking to hire?</a></li>
                             <!--<li><a href="resources.html#signup">Sign up for newsletter</a></li>-->
                             <li><a href="resources.html#recommend">Recommend a friend</a></li>
                             <li><a href="resources.html">See all</a></li>
                         </ul>
-                     </li>
-                     <li><a href="pricing.html">Prices</a></li>
-                    <li><a href="signup.html" class="button special">Sign Up</a></li>
+
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#contactus">Contact</a></li>
+                        <li><a href="signup.html" class="button special">Sign Up</a></li>
                 </ul>
             </nav>
         </header>
@@ -51,9 +55,10 @@
                 <header class="major">
                     <h2>Join Us</h2>
                     <p>Sign up for the course today that will change your life forever.</p>
-                </header>
+                </header> 
 
                 <!-- Form -->
+              <h3><a href="http://www.nyrecourse.com/downloads/NYREC%20Reg%20Form.doc">Prefer to print and scan? Click to download registration form instead.</a></h3>
                 <p>* All fields are required.</p>
                 <section>
                     <h3>Personal Information*</h3>
@@ -209,15 +214,20 @@
 
                             <div class="6u 12u$(xsmall)">
                                 <!--<input type="text" class="read-only" value="This course will be in Boro Park, on Sundays. Which time slot do you prefer? Select one:"/>-->
-                                <p>This course will take place in Monsey and Boro Park, on Sundays. <br/> Please select your location of choice:</p>
+                                <p>This course will take place in Williamsburg, Boro Park, and Kiryas Yoel. Please
+                                    select your location of choice:</p>
                             </div>
                             <div class="3u 12u$(medium)">
                                 <input type="radio" id="1time" name="time" checked value="monsey">
-                                <label for="1time">Monsey: 12 - 3pm</label>
+                                <label for="1time">Williamsburg</label>
                             </div>
                             <div class="3u 12u$(medium)">
                                 <input type="radio" id="2time" name="time" value="boropark">
-                                <label for="2time">Boro Park: 5 - 8pm</label>
+                                <label for="2time">Boro Park</label>
+                            </div>
+                            <div class="3u 12u$(medium)">
+                                <input type="radio" id="3time" name="time" value="kiryasyoel">
+                                <label for="3time">Kiryas Yoel</label>
                             </div>
 
                             <div class="12u 12u$(medium) form-divider"></div>
@@ -334,21 +344,21 @@
                             <h3>Terms and Agreeents</h3>
                             <div class="12u 12u$(xsmall)">
                                 <!--  <input type="text" class="read-only" value="Are you currently employed in a real estate field? Select one:"/> -->
-                                <p>Tuition for the Real Estate Course is $1800. Tuition is to be paid as follows $1000 at time
-                                    of registration, in order to reserve a space in the course. $ 800 before the first class.
+                                <p>Tuition for the Real Estate Course is $1550. Tuition is to be paid as follows $1000 at time
+                                    of registration, in order to reserve a space in the course. $550 before the first class.
                                     This fee is non-refundable. Curriculum adjustment will be left to NYREC discretion. NYREC
                                     does NOT claim responsibility for finding employment for graduates upon completion of
                                     this course; this course is designed to teach job seekers/entrepreneurs the skills they
                                     need to succeed in today’s real estate field.
                                 </p>
-                                <p> Please print and click or tap in the signature box to sign. Submit your form below to complete
+                                <p> Please check the box below and submit the form to complete
                                     registration.
                                 </p>
                             </div>
                         </div>
 
                         <form id="signupForm" action="">
-                            <div class="row">
+                            <!--<div class="row">
                                 <div class="6u 12u$(medium)">
                                     <input type="text" id="fullName" placeholder="Please enter full name." />
                                 </div>
@@ -359,15 +369,19 @@
                                     <img id="submitsig" style="display:none" />
                                     <input type="hidden" id="signatureVal" name="signatureVal" value="" />
                                 </div>
+                            </div>-->
+                              <div class="12u 12u$(medium)">
+                                <input type="checkbox" id="signed" name="signature" value="signed" required>
+                                <label for="signed">Clicking this box affirms you agree to the aforementioned terms and conditions in order to submit your registration.</label>
                             </div>
 
-                            <div class="row uniform loader-wrapper">
+                            <div class="row loader-wrapper">
                                 <div id="loader2">
                                     <img id="spinner" src="images/spinner.gif">
                                 </div>
-                                <div class="2u 12u$(xsmall" )>
+                                <!--<div class="2u 12u$(xsmall" )>
                                     <input type="button" value="Reset Signature" onclick="resetSig()" />
-                                </div>
+                                </div>-->
                                 <div class="2u 12u$(xsmall" )>
                                     <input type="submit" value="Submit Registration" class="special" />
                                 </div>
@@ -429,7 +443,7 @@
             <script src="assets/js/ajax.js"></script>
             <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
             <script src="assets/js/main.js"></script>
-            <script src="assets/js/jSignature.min.js"></script>
+            <!--<script src="assets/js/jSignature.min.js"></script>-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
 
             <script>
@@ -446,21 +460,21 @@
                 });
                 
                 $(document).ready(function() {
-                    $("#signature").jSignature();
+                    // $("#signature").jSignature();
                     $('#loader').hide();
                     $('#loader2').hide();
-                })
-                
-                function resetSig(){
-                    $("#signature").jSignature('reset');
-                }
-                $("#signature").on('click', function(e){
-                    $("#signatureVal").val("true");
                 });
                 
-                 $("#signature").on('tap', function(e){
-                    $("#signatureVal").val("true");
-                });
+                // function resetSig(){
+                //     $("#signature").jSignature('reset');
+                // }
+                // $("#signature").on('click', function(e){
+                //     $("#signatureVal").val("true");
+                // });
+                
+                //  $("#signature").on('tap', function(e){
+                //     $("#signatureVal").val("true");
+                // });
                 
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
